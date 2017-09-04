@@ -2,6 +2,12 @@
 newmember.html相应逻辑
 */
 var dd//debug
+function query(id){
+  if (id.length>0){
+    $('#id').val( id)
+    $('#form-query').submit()
+  }
+}
 function showTables(data){
   var m = $('#member-list');
   tab = $("#table-result")
@@ -24,8 +30,7 @@ function showTables(data){
   m.show()
 
   $('#table-result tbody').on('click', 'tr', function(){
-    $('#id').val( this.getAttribute("data-id"))
-    $('#form-query').submit()
+    query(this.getAttribute("data-id"))
   });
 }
 function hideAll(bList){
@@ -40,6 +45,7 @@ function fillMember(data){
   $('#memberphone')[0].value=data.member.phone
   $('#membername')[0].value=data.member.name
   $('#membercardno')[0].value=data.member.cardNo
+  $('#refid')[0].value=data.reference.id
   $('#refphone')[0].innerText=data.reference.phone
   $('#refname')[0].innerText=data.reference.name
   $('#refcardno')[0].innerText=data.reference.cardNo

@@ -25,14 +25,13 @@
             <!-- The user image in the navbar-->
             <img src="/static/dist/img/avatar.png" class="user-image" alt="User Image" />
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs">xxx Del</span>
           </a>
           <ul class="dropdown-menu">
             <!-- The user image in the menu -->
             <li class="user-header">
               <img src="/static/dist/img/avatar.png" class="img-circle" alt="User Image" />
-              <p>
-                Alexander Pierce - Web Developer
+              <p>Developer
                 <small>Member since Nov. 2012</small>
               </p>
             </li>
@@ -100,12 +99,13 @@
     <ul class="sidebar-menu">
       <li class="header">功能列表</li>
       <!-- Optionally, you can add icons to the links -->
-      <li {{if eq .Page "newmember.html" "checkmember.html" "refmember.html"}}class='treeview active'{{else}}class='treeview' {{end}} >
+      <li {{if eq .Page "newmember.html" "checkmember.html" "refmember.html" "bind.html"}}class='treeview active'{{else}}class='treeview' {{end}} >
         <a href="#"><i class="fa fa-link"></i> <span>会员管理</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li {{if eq .Page "newmember.html"}}class="active"{{end}}><a href="/pages/newmember.html"><i class="fa fa-link"></i> <span>添加会员</span></a></li>
           <li {{if eq .Page "checkmember.html" }}class="active"{{end}}><a href="/pages/checkmember.html"><i class="fa fa-link"></i> <span>会员查询</span></a></li>
           <li {{if eq .Page "refmember.html" }}class="active"{{end}}><a href="/pages/refmember.html"><i class="fa fa-link"></i> <span>被推荐会员查询</span></a></li>
+          <li {{if eq .Page "bind.html"}}class="active"{{end}}><a href="/pages/bind.html"><i class="fa fa-link"></i> <span>补绑定</span></a></li>
         </ul>
       </li>
       <li {{if eq .Page "consume.html" "gainhistory.html" "consumehistory.html"}}class='treeview active'{{else}}class='treeview' {{end}} >
@@ -116,14 +116,21 @@
           <li {{if eq .Page "consumehistory.html" }}class="active"{{end}}><a href="/pages/consumehistory.html"><i class="fa fa-link"></i> <span>消费记录查询</span></a></li>
         </ul>
       </li>
-      <li><a href="/static/pages/consume.html"><i class="fa fa-link"></i> <span>blala</span></a></li>
+      <li {{if eq .Page ".html" "ratio.html" "ratios.html"}}class='treeview active'{{else}}class='treeview' {{end}} >
+        <a href="#"><i class="fa fa-link"></i> <span>费率配置</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li {{if eq .Page "ratios.html" }}class="active"{{end}}><a href="/pages/ratios.html"><i class="fa fa-link"></i> <span>通用费率配置</span></a></li>
+          <li {{if eq .Page "ratio.html" }}class="active"{{end}}><a href="/pages/ratio.html"><i class="fa fa-link"></i> <span>个体费率配置</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#"><i class="fa fa-link"></i> <span>blala</span></a></li>
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
 </aside>
 <script type="text/javascript">
 function showAlert(msg,className,delay){
-  var alert = $('<div id="msgalert" class="'+className+'" style="width:60%;margin:10px 20%;position:fixed;left:0;top:0;z-index:10000;display:none"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><label id="msglbl">'+msg+'</label>');
+  var alert = $('<div id="msgalert" class="'+className+'" style="width:60%;margin:10px 20%;position:fixed;left:0;top:0;z-index:10000;display:none"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><label id="msglbl">'+msg+'</label></div>');
   alert.appendTo($('body'))
   alert.show()
   window.setTimeout(function() { alert.alert('close') }, delay);

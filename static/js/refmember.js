@@ -20,7 +20,7 @@ function fillMember(data){
   $('#refname')[0].innerText=data.respMsg
   var tab = $('#table-referenced');
   tab.empty()
-  tr = $("<tr><th>姓名</th><th>电话</th><th>卡号</th><th>加入时间</th></tr>")
+  tr = $("<tr><th>姓名</th><th>电话</th><th>关系</th><th>分成比例</th><th>加入时间</th></tr>")
   tr.appendTo(tab)
   $.each(data.members, function (index, row) {
     var tr = $("<tr data-id='"+row.id+"'></tr>");
@@ -29,7 +29,9 @@ function fillMember(data){
     td.appendTo(tr)
     td = $("<td>" + row.phone + "</td>");
     td.appendTo(tr)
-    td = $("<td>" + row.cardNo + "</td>");
+    td = $("<td>" + row.generations + "</td>");
+    td.appendTo(tr)
+    td = $("<td>" + row.royaltyratio*100 + "%</td>");
     td.appendTo(tr)
     td = $("<td>" + row.createTime + "</td>");
     td.appendTo(tr)
