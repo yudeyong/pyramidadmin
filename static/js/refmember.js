@@ -41,7 +41,7 @@ function fillMember(data){
 }
 
 function getBack(data){
-  dd=$('#id').val()
+  dd=data
   $('#id').val("")
   hideAll(dd=="")
   var className,label
