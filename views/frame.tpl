@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <!-- search form (Optional) -->
+    <!-- search form (Optional) - ->
     <form action="#" method="get" class="sidebar-form">
       <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search..." />
@@ -116,14 +116,14 @@
           <li {{if eq .Page "consumehistory.html" }}class="active"{{end}}><a href="/pages/consumehistory.html"><i class="fa fa-link"></i> <span>消费记录查询</span></a></li>
         </ul>
       </li>
-      <li {{if eq .Page ".html" "ratio.html" "ratios.html"}}class='treeview active'{{else}}class='treeview' {{end}} >
+      <!--li {{if eq .Page ".html" "ratio.html" "ratios.html"}}class='treeview active'{{else}}class='treeview' {{end}} >
         <a href="#"><i class="fa fa-link"></i> <span>费率配置</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li {{if eq .Page "ratios.html" }}class="active"{{end}}><a href="/pages/ratios.html"><i class="fa fa-link"></i> <span>通用费率配置</span></a></li>
           <li {{if eq .Page "ratio.html" }}class="active"{{end}}><a href="/pages/ratio.html"><i class="fa fa-link"></i> <span>个体费率配置</span></a></li>
         </ul>
-      </li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>blala</span></a></li>
+      </li-->
+      <li {{if eq .Page "ratios.html" }}class="active"{{end}}><a href="/pages/ratios.html"><i class="fa fa-link"></i> <span>通用费率配置</span></a></li>
     </ul><!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
